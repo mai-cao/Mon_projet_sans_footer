@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+{# {{dump()}} #}
+<section class="base"></section>
+
+{% for categorie in categories %}
+<a href="{{ path ("show_produits", {'id':categorie.id}) }}" >{{ categorie.nom }}</a>
+<img src="{{asset("images/categorie/" ~ categorie.image)}}" alt="photo par categorie">
+
+{% endfor %}
+
+{% endblock %}

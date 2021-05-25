@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+
+        {% block barre_navigation %}
+    <nav class="bar_nav">
+        {# <a href="{{path('categorie')}}"><img src="{{asset("img/logo-admin.jpg")}}" alt="logo-admin"></a> #}
+
+<ul class="nav_list">
+
+    <li>
+    <a href="{{path('categorie')}}">Accueil</a>
+    {# Volet roulant dans accueil = A propos de nous #}
+    </li>
+
+    <li>
+    <a href="{{path('categorie_index')}}">Gérer les catégories</a>
+    </li>
+
+<li>
+    <a href="{{path('user_index')}}">Gérer l'utilisateur</a>
+    </li>
+
+<li>
+    <a href="{{path("produit_index")}}">Gérer les produits</a>
+    </li>
+
+    <li>
+    <a href="{{path("app_logout")}}">Se déconnecter</a>
+    </li>
+
+     
+
+</ul>
+</nav>
+    {% endblock %}

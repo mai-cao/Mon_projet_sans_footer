@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{# {{dump()}} #}
+
+{% for produit in categorie.produits %}
+
+<a href="{{ path("show_produit",{'id':produit.id})}}">{{ produit.nom}}</a>
+<img src="{{asset("images/categorie/" ~ produit.photo)}}" alt=""> 
+{% endfor %}
+
+{% endblock %}

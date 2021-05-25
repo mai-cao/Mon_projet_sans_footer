@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{# {{dump()}} #}
+
+<h1>{{ produit.nom}}</h1>
+<p>{{produit.description}}</p>
+<img src="{{asset("images/categorie/" ~ produit.photo)}}" alt=""> 
+<p>{{produit.telephone}}</p>
+<p>{{produit.email}}</p>
+<p>{{produit.etat}}</p>
+<p>{{produit.transaction}}</p>
+
+{% endblock %}
+

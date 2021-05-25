@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav_list {
+  /* background-image: url(../img/troccamion.jpg); */
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+ 
+}
+.nav_list li a{
+  text-decoration: none;
+  color: black;
+ 
+}
+.base{
+
+  background-image: url(../img/logo.jpg);
+  background-position: center;
+  background-size: cover;
+  height:80vh;
+}
+ul li {
+  text-decoration: none;
+  list-style: none;
+ 
+  padding: 20px 0px;
+  font-size: 1.5rem;
+
+  top: 0px;
+  background-position: center;
+  background-size: cover;
+  /* height: 100vh; */
+}
+.nous2{
+  background-image: url(../img/logo-nous.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+}
+
+/* .base{
+     background-image: url(../img/logo.jpg);
+     background-position: center;
+        background-size: cover;
+        height:100vh;
+   
+
+}
+.nous2{
+    background-image: url(../img/logo-nous.jpg);
+
+} */

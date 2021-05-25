@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+  {% block barre_navigation %}
+     
+        <nav class="bar_nav">
+{# <a href="{{path('categorie')}}"><img src="{{asset("img/logo.jpg")}}" alt="logo"></a> #}
+
+
+
+<ul class="nav_list">
+
+    <li>
+    <a href="{{path('categorie')}}">Accueil</a>
+    {# Volet roulant dans accueil = A propos de nous #}
+    </li>
+
+    <li>
+    <a href="{{path('a_propos_de_nous')}}">A propos de nous</a>
+    </li>
+
+    <li>
+    <a href="{{path('produit_new')}}">Déposer une annonce</a>
+    </li>
+
+    <li>
+    <a href="{{path('categorie')}}">Etat</a>
+    {# Menu déroulant : Neuf - tresBonetat ... #}
+    </li>
+
+    <li>
+    <a href="{{path('categorie')}}">Troc</a>
+    {# Menu déroulant : troc - a vendre - a donner #}
+    </li>
+
+    <li>
+    <a href="{{path('categorie')}}">Ville</a>
+    </li>
+
+{% if app.user %}
+    <li>
+    <a href="{{path("app_login")}}">Se déconnecter</a>
+    </li>
+    {% else %}
+    <li>
+    <a href="{{path("app_login")}}">Se connecter</a>
+    </li>
+
+    <li>
+    <a href="{{path("user_new")}}">S'inscrire</a>
+    </li>
+{% endif %}
+{# si l'utlisateur connecter est un admin je vais lui afficher ce lien pour aller directement dans l'espace admin #}
+            {% if is_granted ('ROLE_ADMIN') %} 
+            <li><a href="{{path ("categorie_index") }}">Espace admin</a></li>
+            {% elseif is_granted ("ROLE_USER") %}
+             <li><a href="{{path ("espace_abonne") }}">Espace abonné</a></li>
+             
+            {% endif %}
+
+{# si l'utilisateur est un user qui veut aller dans lespace abonne il peut avoir la main pour ajouter les produits #}
+            {# {% if is_granted ('ROLE_USER') %} 
+            <li><a href="{{path ("espace_abonne") }}">Espace abonné</a></li>
+            {% endif %} #}
+
+</ul>
+
+</nav>
+        {% endblock %}
